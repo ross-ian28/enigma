@@ -6,16 +6,19 @@ RSpec.describe Enigma do
     @enigma = Enigma.new
   end
 
-  describe "exists" do
-    it "is an enigma" do
-      expect(@enigma).to be_an(Enigma)
-    end
-    it "finds keys" do
-      expect(@enigma.decrypt("Pabu is cool")).to eq({
-        :encryption => #encrypted string,
-        :key => "#{key}",
-        :date => "#{date}"
-      })
-    end
+  it "is an enigma" do
+    expect(@enigma).to be_an(Enigma)
+  end
+  it "encrypts message" do
+    expect(@enigma.encrypt("!Pabu is cool")).to be_a(Hash)
+  end
+  xit "decrypts message" do
+    expect(@enigma.decrypt("!Pabu is cool")).to be_a(Hash)
   end
 end
+
+# {
+#   :encryption => #encrypted string,
+#   :key => "#{key}",
+#   :date => "#{date}"
+# })
