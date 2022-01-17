@@ -10,5 +10,5 @@ enigma_hash = @enigma.encrypt(user_message)
 
 File.open(new_file, "w") do |file|
   file.puts enigma_hash[:encryption]
-  puts "Created #{new_file} with the key #{enigma_hash[:key]}, and date #{hash_output[:date]}"
+  puts "Created #{new_file} with the key #{enigma_hash[:key]}, and date #{enigma_hash[:date]}"
 end

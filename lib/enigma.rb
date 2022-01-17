@@ -9,8 +9,16 @@ class Enigma
     @chars = ("a".."z").to_a << " "
     @date = Date.today
   end
-  #date = @date.strftime("%m%d%y")
-  def encrypt(message, key, date)
+
+  def random_num
+    rand(9 ** 5)
+  end
+
+  def finds_date
+    @date.strftime("%m%d%y")
+  end
+
+  def encrypt(message, key = random_num, date = finds_date)
     key_arr = key.to_s.split("") #change integer into array of each character
     #creates the 4 keys
     a_key = key_arr[0..1].join.to_i
