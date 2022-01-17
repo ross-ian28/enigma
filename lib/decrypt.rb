@@ -1,7 +1,16 @@
-class Decrypt
-  attr_reader :
+require './lib/enigma'
 
-  def initialize(message_file, decrypted_message_file, key, date)
+@enigma = Enigma.new
 
-  end
+message = ARGV[0]
+new_file = ARGV[1]
+key = ARGV[2]
+date = ARGV[3]
+
+user_message = File.new(message).read
+enigma_hash = @enigma.encrypt(user_message)
+
+File.open(new_file, "w") do |file|
+  file.puts enigma_hash[:encryption]
+  puts "Created #{new_file} with the key #{key}, and date #{date}"
 end
