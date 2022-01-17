@@ -11,7 +11,7 @@ RSpec.describe Enigma do
       expect(@enigma).to be_an(Enigma)
     end
     it "finds keys" do
-      expect(@enigma.encrypt("Hi")).to eq([])
+      expect(@enigma.encrypt("Pabu is cool")).to eq([])
     end
   end
 end
