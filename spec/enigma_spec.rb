@@ -11,6 +11,12 @@ RSpec.describe Enigma do
   it "is an enigma" do
     expect(@enigma).to be_an(Enigma)
   end
+  it "finds random num" do
+    expect(@enigma.random_num).to be_an(Integer)
+  end
+  it "finds date" do
+    expect(@enigma.finds_date).to eq("011722")
+  end
   it "encrypts message" do
     expect(@enigma.encrypt("Hello World!", "02715", "040895")).to eq({
       :encryption=>"keder ohulw!",

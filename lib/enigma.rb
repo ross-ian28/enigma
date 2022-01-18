@@ -48,7 +48,10 @@ class Enigma
     #iterate through message array
     encrypted_message = []
     message_arr.each_with_index do |letter, index|
-      if @chars.include?(letter) == false #ignore anything not a letter or space
+      binding.pry
+      if letter == "\n"
+        delete(letter)
+      elsif @chars.include?(letter) == false #ignore anything not a letter or space
         encrypted_message << letter
       elsif index % 4 == 0
         new_letter = @chars.rotate(a_shift)[@chars.index(letter)]
